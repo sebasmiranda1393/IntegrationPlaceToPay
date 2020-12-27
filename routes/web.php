@@ -28,4 +28,4 @@ Route::group(['prefix' => 'carts'], function () {
 
 });
 
-route::resource('buyCart', BuyCartController::class)->only(["store"]);
+route::resource('buyCart', BuyCartController::class)->only(["store", "index"]);

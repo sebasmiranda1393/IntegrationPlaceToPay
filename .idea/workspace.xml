@@ -157,7 +157,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608942454789</updated>
-      <workItem from="1608942455813" duration="28571000" />
+      <workItem from="1608942455813" duration="29480000" />
     </task>
     <servers />
   </component>
@@ -169,14 +169,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="455" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1609029186716" />
+    <state x="372" y="139" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609041775368">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="372" y="139" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1609041775368" />
     <state x="1779" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609009396162">
       <screen x="1366" y="0" width="1366" height="728" />
     </state>
     <state x="1779" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1609009396162" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609038467922">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609041714926">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1779" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1609019505887" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1609038467922" />
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1609041714926" />
   </component>
 </project>

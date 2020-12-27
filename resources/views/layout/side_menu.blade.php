@@ -26,6 +26,14 @@
                     <span class="menu-title"> <h2 style="color: #000000"> <small> Listar Productos</small></h2></span>
                 </a>
             </li>
+            <br>
+
+            <li class="nav-item bg-light" style="border-style: solid; border-radius:25px" >
+                <a class="nav-link {{ Request::is('roles') ? 'btn-info' : '' }}" href="#">
+                    <i class="mdi mdi-compass-outline menu-icon"></i>
+                    <span class="menu-title"> <h2 style="color: #000000"> <small> Mis Compras</small></h2></span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

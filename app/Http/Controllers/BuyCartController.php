@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\CartProduct;
 use App\User;
 use Dnetix\Redirection\Message\RedirectRequest;
 use Dnetix\Redirection\PlacetoPay;
@@ -13,6 +14,38 @@ use PhpParser\Node\Expr\Cast\Object_;
 
 class BuyCartController extends Controller
 {
+
+    protected $buyCartController;
+
+
+
+    /**
+     * CartController constructor.
+     * @param BuyCartController $buyCartController
+     */
+    public function __construct(CartController $buyCartController)    {
+
+        $this->buyCartController = $buyCartController;
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $data = Cart::select('carts.id', 'carts.created_at','carts.request_id' , DB::raw('sum(products.sale_price) as total'))
+            ->join('cart_products', 'carts.id', '=', 'cart_products.cart_id')
+            ->join('users', 'users.id', '=', 'carts.user_id')
+            ->join('products', 'products.id', '=', 'cart_products.product_id')
+            ->where('carts.user_id', Auth::user()->id)
+            ->groupBy('carts.id')
+            ->get();
+    }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -29,12 +62,23 @@ class BuyCartController extends Controller
                 $response = $this->loadRequestToCreateRequest($request, $users[0]);
 
                 if ($response->isSuccessful()) {
-
+                    $amount = 0;
                     $cart = new Cart();
                     $cart->user_id = $users[0]->id;
                     $cart->request_id = $response->requestId();
                     $cart->status = 'pendiente';
                     $cart->save();
+
+                    foreach (session()->get('cart') as $key => $value) {
+                        $amount += $value['price'] * $value['quantity'];
+                        $cartDetails = new cartProduct();
+                        $cartDetails->cart_id = $cart->id;
+                        $cartDetails->product_id = $value["id"];
+                        $cartDetails->quantity = $value["quantity"];
+                        $cartDetails->save();
+                    }
+                    $this->buyCartController->empty(0);
+
                     return redirect($response->processUrl());
                 }
 
