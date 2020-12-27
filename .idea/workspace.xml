@@ -117,6 +117,7 @@
       <path value="$PROJECT_DIR$/vendor/place-to-pay/php-sdk-pse" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/yoeunes/toastr" />
+      <path value="$PROJECT_DIR$/vendor/dnetix/redirection" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mAhlf5YKo32nCdMvnmQLZURw2t" />
@@ -127,7 +128,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -136,6 +137,7 @@
       <recent name="C:\Users\ASUS\PlaceTopay1\resources\views\layouts" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\PlaceTopay1\config" />
       <recent name="C:\Users\ASUS\PlaceTopay1\resources\views" />
       <recent name="C:\Users\ASUS\PlaceTopay1\resources\views\layouts\partials" />
       <recent name="C:\Users\ASUS\PlaceTopay1\public\css" />
@@ -155,7 +157,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608942454789</updated>
-      <workItem from="1608942455813" duration="18587000" />
+      <workItem from="1608942455813" duration="28571000" />
     </task>
     <servers />
   </component>
@@ -163,14 +165,18 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="455" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609029186716">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="455" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1609029186716" />
     <state x="1779" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609009396162">
       <screen x="1366" y="0" width="1366" height="728" />
     </state>
     <state x="1779" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1609009396162" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609026309906">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609038467922">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1779" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1609019505887" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1609026309906" />
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1609038467922" />
   </component>
 </project>
