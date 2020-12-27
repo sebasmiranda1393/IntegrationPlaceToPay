@@ -55,7 +55,7 @@
                                     @endif
                                 </td>
                                 <td style="text-align: center ">
-                                    <a href="#">
+                                    <a href="{{ route('carts.show', $product->id) }}">
                                         <i class="fas fa-shopping-cart fa-2x"> </i>
                                     </a>
                                 </td>
@@ -67,4 +67,7 @@
             </div>
         </div>
     </div>
+    @jquery
+    @toastr_js
+    @toastr_render
 @endsection

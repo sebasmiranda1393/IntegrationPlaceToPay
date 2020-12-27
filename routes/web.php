@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 route::resource('productos', ProductController::class)->only(["index"]);
+
+route::resource('carts', CartController::class)->only(["show"]);
