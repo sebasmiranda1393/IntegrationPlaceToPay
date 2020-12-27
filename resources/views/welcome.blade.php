@@ -2,11 +2,11 @@
 @section('content')
     <div>
         <div class="row">
-            <div class="col-md-2 bg-dark" >
+            <div class="col-md-2 bg-dark"  style="border-style: solid">
                 @include('layout.side_menu')
             </div>
 
-            <div class="col-md-10"  style="margin: -87px 0px 0px 186px">
+            <div class="col-md-10"  >
 
                 <body style="background-color:#636060;">
 
@@ -37,7 +37,8 @@
                         </thead>
                         <tbody>
 
-                        @foreach ($products as $product)
+                        @foreach ($products as $product )
+
 
                             <tr>
                                 <th scope="row" style="text-align: center">  {{ $product->id }} </th>
@@ -55,7 +56,7 @@
                                     @endif
                                 </td>
                                 <td style="text-align: center ">
-                                    <a href="#">
+                                    <a href="{{ route('carts.show', $product->id) }}">
                                         <i class="fas fa-shopping-cart fa-2x"> </i>
                                     </a>
                                 </td>
@@ -67,4 +68,7 @@
             </div>
         </div>
     </div>
+    @jquery
+    @toastr_js
+    @toastr_render
 @endsection

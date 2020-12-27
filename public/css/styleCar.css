@@ -25,6 +25,11 @@
     border-bottom: 1px solid #ffed4a;
 }
 
+.centrar{
+    display:block;
+    margin:auto;
+}
+
 .total-section p {
     margin-bottom: 20px;
 }

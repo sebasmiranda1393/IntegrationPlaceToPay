@@ -13,8 +13,10 @@ class UserSeeder extends Seeder
     {
         $user = new \App\User();
         $user->name = 'sebas';
+        $user->apellido = 'miranda hernandez';
         $user->email = 'sebasmirandadc@gmail.com';
-        $user->document = bcrypt('1073165535');
+        $user->document = '1073165535';
+        $user->mobile = '3144452921';
         $user->save();
 
     }

@@ -36,6 +36,7 @@
         @endif
 
     </script>
+    @toastr_css
 </head>
 <body>
 <div id="app">
