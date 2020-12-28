@@ -4,13 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use App\CartProduct;
-use App\User;
-use Dnetix\Redirection\Message\RedirectRequest;
 use Dnetix\Redirection\PlacetoPay;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use PhpParser\Node\Expr\Cast\Object_;
 
 class BuyCartController extends Controller
 {
@@ -41,7 +37,7 @@ class BuyCartController extends Controller
             if (isset($users[0])) {
 
 
-                $data = Cart::select('carts.id', 'carts.status','carts.created_at','carts.request_id' , 'users.document',
+                $data = Cart::select('carts.id', 'carts.status', 'carts.created_at', 'carts.request_id', 'users.document',
                     'users.name', 'users.apellido', DB::raw('sum(products.sale_price) as total'))
                     ->join('cart_products', 'carts.id', '=', 'cart_products.cart_id')
                     ->join('users', 'users.id', '=', 'carts.user_id')
@@ -93,9 +89,9 @@ class BuyCartController extends Controller
                         $cartDetails->quantity = $value["quantity"];
                         $cartDetails->save();
                     }
-                   $this->buyCartController->empty(0);
+                    $this->buyCartController->empty(0);
 
-                   return redirect($response->processUrl());
+                    return redirect($response->processUrl());
                 }
 
             }
@@ -112,7 +108,7 @@ class BuyCartController extends Controller
     function loadRequestToCreateRequest(Request $requestInput, $user, $cardId)
     {
         $amount = 0;
-        $url = 'http://127.0.0.1:8000/buyCart/'.$cardId;
+        $url = 'http://127.0.0.1:8000/buyCart/' . $cardId;
         if (session()->get('cart') != null) {
             foreach (session()->get('cart') as $key => $value) {
                 $amount += $value['price'] * $value['quantity'];
@@ -137,7 +133,7 @@ class BuyCartController extends Controller
                         "total" => $amount
                     ]
                 ],
-                "expiration" => date('c', strtotime('+2 hour')),
+                "expiration" => date('c', strtotime('+5 minutes')),
                 "ipAddress" => "127.0.0.1",
                 "userAgent" => "PlacetoPay Sandbox",
                 "returnUrl" => $url
@@ -184,7 +180,7 @@ class BuyCartController extends Controller
 
 
                 $requestId = 0;
-                foreach($data as $id => $details){
+                foreach ($data as $id => $details) {
                     $requestId = $details['request_id'];
                 }
 
@@ -202,21 +198,18 @@ class BuyCartController extends Controller
                 $response = $placetopay->query($requestId);
 
 
-                if($response->status()->message()!='La petición se encuentra activa'){
+                if ($response->status()->message() != 'La petición se encuentra activa') {
                     DB::Table('carts')->where('request_id', $details['request_id'])->update(
                         array(
-                            'status' =>  $response->status()->message()
+                            'status' => $response->status()->message()
                         )
                     );
                 }
 
 
-             return view('get_my_cart_by_id', ['carts' => $data],  ['status' => $response->status()], ['id'=>$id]);
+                return view('get_my_cart_by_id', ['carts' => $data], ['status' => $response->status()], ['id' => $id]);
             }
         }
-
-
-
 
 
     }
